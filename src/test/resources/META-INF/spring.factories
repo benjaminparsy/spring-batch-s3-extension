@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.service.connection.ConnectionDetailsFactory=\
+com.benjamin.parsy.writer.s3.configuration.AdobeS3MockConnectionDetailsFactory
