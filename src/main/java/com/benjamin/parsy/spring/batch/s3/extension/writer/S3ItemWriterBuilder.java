@@ -7,7 +7,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.unit.DataSize;
 import software.amazon.awssdk.services.s3.S3Client;
 
-public class S3PartItemWriterBuilder<T> {
+public class S3ItemWriterBuilder<T> {
 
     private S3Client s3Client;
     private DataSize bufferSize;
@@ -16,32 +16,32 @@ public class S3PartItemWriterBuilder<T> {
     private S3HeaderCallback headerCallback;
     private S3FooterCallback footerCallback;
 
-    public S3PartItemWriterBuilder<T> s3Client(S3Client s3Client) {
+    public S3ItemWriterBuilder<T> s3Client(S3Client s3Client) {
         this.s3Client = s3Client;
         return this;
     }
 
-    public S3PartItemWriterBuilder<T> bufferSize(DataSize bufferSize) {
+    public S3ItemWriterBuilder<T> bufferSize(DataSize bufferSize) {
         this.bufferSize = bufferSize;
         return this;
     }
 
-    public S3PartItemWriterBuilder<T> location(Location location) {
+    public S3ItemWriterBuilder<T> location(Location location) {
         this.location = location;
         return this;
     }
 
-    public S3PartItemWriterBuilder<T> byteConverter(Converter<Chunk<? extends T>, byte[]> byteConverter) {
+    public S3ItemWriterBuilder<T> byteConverter(Converter<Chunk<? extends T>, byte[]> byteConverter) {
         this.byteConverter = byteConverter;
         return this;
     }
 
-    public S3PartItemWriterBuilder<T> headerCallback(S3HeaderCallback headerCallback) {
+    public S3ItemWriterBuilder<T> headerCallback(S3HeaderCallback headerCallback) {
         this.headerCallback = headerCallback;
         return this;
     }
 
-    public S3PartItemWriterBuilder<T> footerCallback(S3FooterCallback footerCallback) {
+    public S3ItemWriterBuilder<T> footerCallback(S3FooterCallback footerCallback) {
         this.footerCallback = footerCallback;
         return this;
     }

@@ -3,7 +3,7 @@ package com.benjamin.parsy.spring.batch.s3.extension.writer.job.steps.genfile;
 import com.benjamin.parsy.spring.batch.s3.extension.writer.S3FooterCallback;
 import com.benjamin.parsy.spring.batch.s3.extension.writer.S3HeaderCallback;
 import com.benjamin.parsy.spring.batch.s3.extension.writer.S3ItemWriter;
-import com.benjamin.parsy.spring.batch.s3.extension.writer.S3PartItemWriterBuilder;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.S3ItemWriterBuilder;
 import com.benjamin.parsy.spring.batch.s3.extension.writer.configuration.S3Extension;
 import com.benjamin.parsy.spring.batch.s3.extension.writer.job.steps.genfile.dto.ItemWriteDto;
 import io.awspring.cloud.s3.Location;
@@ -11,6 +11,7 @@ import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.Chunk;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
+import org.springframework.util.unit.DataSize;
 import software.amazon.awssdk.services.s3.S3Client;
 
 import java.nio.charset.StandardCharsets;
@@ -27,8 +28,9 @@ public class GenFileWriterFactory {
 
     public S3ItemWriter<ItemWriteDto> createS3PartItemWriter() {
 
-        return new S3PartItemWriterBuilder<ItemWriteDto>()
+        return new S3ItemWriterBuilder<ItemWriteDto>()
                 .s3Client(s3Client)
+                .bufferSize(DataSize.ofMegabytes(5))
                 .location(Location.of(S3Extension.TEST_BUCKET, "file"))
                 .byteConverter(createConverter())
                 .headerCallback(createHeaderCallback())
