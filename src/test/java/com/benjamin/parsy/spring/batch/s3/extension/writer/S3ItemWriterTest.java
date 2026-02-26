@@ -1,7 +1,7 @@
-package com.benjamin.parsy.writer.s3;
+package com.benjamin.parsy.spring.batch.s3.extension.writer;
 
-import com.benjamin.parsy.writer.s3.configuration.S3Extension;
-import com.benjamin.parsy.writer.s3.configuration.TestConfig;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.configuration.S3Extension;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.configuration.TestConfig;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.batch.core.BatchStatus;

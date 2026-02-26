@@ -1,11 +1,11 @@
-package com.benjamin.parsy.writer.s3.job.steps.genfile;
+package com.benjamin.parsy.spring.batch.s3.extension.writer.job.steps.genfile;
 
-import com.benjamin.parsy.writer.s3.S3FooterCallback;
-import com.benjamin.parsy.writer.s3.S3HeaderCallback;
-import com.benjamin.parsy.writer.s3.S3ItemWriter;
-import com.benjamin.parsy.writer.s3.S3PartItemWriterBuilder;
-import com.benjamin.parsy.writer.s3.configuration.S3Extension;
-import com.benjamin.parsy.writer.s3.job.steps.genfile.dto.ItemWriteDto;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.S3FooterCallback;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.S3HeaderCallback;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.S3ItemWriter;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.S3PartItemWriterBuilder;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.configuration.S3Extension;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.job.steps.genfile.dto.ItemWriteDto;
 import io.awspring.cloud.s3.Location;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.Chunk;

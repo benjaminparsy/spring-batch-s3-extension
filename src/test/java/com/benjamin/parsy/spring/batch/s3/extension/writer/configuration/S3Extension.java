@@ -1,4 +1,4 @@
-package com.benjamin.parsy.writer.s3.configuration;
+package com.benjamin.parsy.spring.batch.s3.extension.writer.configuration;
 
 import org.junit.jupiter.api.extension.AfterAllCallback;
 import org.junit.jupiter.api.extension.BeforeAllCallback;

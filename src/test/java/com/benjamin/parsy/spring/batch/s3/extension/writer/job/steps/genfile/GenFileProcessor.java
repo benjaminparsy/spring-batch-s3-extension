@@ -1,7 +1,7 @@
-package com.benjamin.parsy.writer.s3.job.steps.genfile;
+package com.benjamin.parsy.spring.batch.s3.extension.writer.job.steps.genfile;
 
-import com.benjamin.parsy.writer.s3.job.steps.genfile.dto.ItemReadDto;
-import com.benjamin.parsy.writer.s3.job.steps.genfile.dto.ItemWriteDto;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.job.steps.genfile.dto.ItemReadDto;
+import com.benjamin.parsy.spring.batch.s3.extension.writer.job.steps.genfile.dto.ItemWriteDto;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.lang.NonNull;
 

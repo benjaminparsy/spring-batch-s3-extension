@@ -1,4 +1,4 @@
-package com.benjamin.parsy.writer.s3;
+package com.benjamin.parsy.spring.batch.s3.extension.writer;
 
 import io.awspring.cloud.s3.Location;
 import io.awspring.cloud.s3.S3Exception;

@@ -1,4 +1,4 @@
-package com.benjamin.parsy.writer.s3;
+package com.benjamin.parsy.spring.batch.s3.extension.writer;
 
 import org.springframework.batch.item.Chunk;
 import org.springframework.core.convert.converter.Converter;

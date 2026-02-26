@@ -1,4 +1,4 @@
-package com.benjamin.parsy.writer.s3.job;
+package com.benjamin.parsy.spring.batch.s3.extension.writer.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

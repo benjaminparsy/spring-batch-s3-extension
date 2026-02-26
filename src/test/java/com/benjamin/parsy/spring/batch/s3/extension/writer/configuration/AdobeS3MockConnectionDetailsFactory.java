@@ -1,4 +1,4 @@
-package com.benjamin.parsy.writer.s3.configuration;
+package com.benjamin.parsy.spring.batch.s3.extension.writer.configuration;
 
 import com.adobe.testing.s3mock.testcontainers.S3MockContainer;
 import io.awspring.cloud.autoconfigure.core.AwsConnectionDetails;
