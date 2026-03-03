@@ -1,7 +1,6 @@
 package com.benjamin.parsy.spring.batch.s3.extension.writer;
 
 import io.awspring.cloud.s3.Location;
-import org.springframework.batch.item.Chunk;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.util.Assert;
 import org.springframework.util.unit.DataSize;
@@ -12,7 +11,7 @@ public class S3ItemWriterBuilder<T> {
     private S3Client s3Client;
     private DataSize bufferSize;
     private Location location;
-    private Converter<Chunk<? extends T>, byte[]> byteConverter;
+    private Converter<T, byte[]> byteConverter;
     private S3HeaderCallback headerCallback;
     private S3FooterCallback footerCallback;
 
@@ -31,7 +30,7 @@ public class S3ItemWriterBuilder<T> {
         return this;
     }
 
-    public S3ItemWriterBuilder<T> byteConverter(Converter<Chunk<? extends T>, byte[]> byteConverter) {
+    public S3ItemWriterBuilder<T> byteConverter(Converter<T, byte[]> byteConverter) {
         this.byteConverter = byteConverter;
         return this;
     }
@@ -52,13 +51,12 @@ public class S3ItemWriterBuilder<T> {
         Assert.notNull(location, "A location is required.");
         Assert.notNull(byteConverter, "A byteConverter is required.");
 
-        S3ItemWriter<T> s3PartItemWriter = new S3ItemWriter<>(s3Client, bufferSize);
-        s3PartItemWriter.byteConverter(byteConverter);
-        s3PartItemWriter.setLocation(location);
-        s3PartItemWriter.setHeaderCallback(headerCallback);
-        s3PartItemWriter.setFooterCallback(footerCallback);
+        S3ItemWriter<T> s3ItemWriter = new S3ItemWriter<>(s3Client, bufferSize, byteConverter);
+        s3ItemWriter.setLocation(location);
+        s3ItemWriter.setHeaderCallback(headerCallback);
+        s3ItemWriter.setFooterCallback(footerCallback);
 
-        return s3PartItemWriter;
+        return s3ItemWriter;
     }
 
 }

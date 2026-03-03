@@ -1,0 +1,11 @@
+spring:
+  batch:
+    jdbc.initialize-schema: always
+    job.enabled: false
+  cloud:
+    aws:
+      s3.path-style-access-enabled: true
+
+logging:
+  level:
+    com.benjamin.parsy: debug
